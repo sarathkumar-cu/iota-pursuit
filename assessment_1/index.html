@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assessment 1: IOTA</title>
+    <link rel="stylesheet" href="site.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="left-pane">
+            <div id="image-input-section">
+                <label for="image-input-field">Pick an image...</label>
+                <input
+                    id="image-input-field"
+                    type="file"
+                    accept="image/*"
+                    onchange="previewImageHandler(this)"
+                />
+            </div>
+            <div id="image-details-section">
+                <span id="image-prop-header">Image Properties</span>
+                <table>
+                    <tr>
+                        <th>Image Name</th>
+                        <td>:</td>
+                        <td id="image-prop-name">asdf</td>
+                    </tr>
+                    <tr>
+                        <th>Dimensions</th>
+                        <td>:</td>
+                        <td id="image-prop-dimensions">asdf</td>
+                    </tr>
+                    <tr>
+                        <th>MIME Type</th>
+                        <td>:</td>
+                        <td id="image-prop-mime-type">asdf asdf</td>
+                    </tr>
+                </table>
+            </div>
+            <div
+                id="image-preview-section"
+            ></div>
+        </div>
+        <div class="right-pane">
+            <div class="descriptions-section"></div>
+        </div>
+    </div>
+	<script src="image-mapper.js"></script>
+  </body>
+</html>

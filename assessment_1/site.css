@@ -1,0 +1,55 @@
+body {
+    margin: 5px;
+}
+.wrapper {
+    font-family: sans-serif;
+}
+#image-input-section label {
+    background-color: rgba(221, 160, 221, 0.6);
+    border: 2px solid rgb(221, 160, 221);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: inline-block;
+}
+#image-input-section label:hover {
+    background-color: rgba(221, 160, 221, 0.5);
+    border-color: rgba(221, 160, 221, 0.75);
+    color: rgba(0, 0, 0, 0.75);
+}
+#image-input-field {
+    visibility: hidden;
+}
+#image-details-section {
+    visibility: hidden;
+}
+#image-details-section #image-prop-header{
+    padding: 2px 10px;
+    display: inline-block;
+    font-size: smaller;
+    border: 1px solid;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+#image-details-section table {
+    border: 1px solid;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+}
+#image-details-section table tr th {
+    font-weight: normal;
+    text-align: left;
+    cursor: default;
+}
+#image-details-section table tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+#image-details-section table tr td:last-child {
+    font-style: italic;
+}
+#image-details-section table tr th, #image-details-section table tr td {
+    padding: 5px 20px;
+    font-size: smaller;
+}
