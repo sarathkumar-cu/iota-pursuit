@@ -40,7 +40,6 @@ function previewImageHandler(input) {
             const reader = new FileReader();
             reader.onload = function (e) {
                 const imgElement = document.createElement("img");
-                imgElement.setAttribute("width", "100%");
                 imgElement.setAttribute("src", e.target.result);
                 imgElement.onclick = imgPlotHandler;
                 image.src = e.target.result;
@@ -90,8 +89,8 @@ function imgPlotHandler(event) {
     const plotWrapper = document.createElement("div");
     plotWrapper.setAttribute("class", "image-plot-wrapper");
     plotWrapper.setAttribute("id", "image-plot-wrapper-in-progress");
-    plotWrapper.style.left = (x - 7) + "px";
-    plotWrapper.style.top = (y - 5) + "px";
+    plotWrapper.style.left = (x - 6) + "px";
+    plotWrapper.style.top = (y - 8) + "px";
     const plot = document.createElement("div");
     plot.setAttribute("class", "image-plot");
     plotWrapper.appendChild(plot);
@@ -127,9 +126,23 @@ function imgPlotHandler(event) {
     descWrapper.appendChild(saveButton);
     descWrapper.appendChild(cancelButton);
     plotWrapper.appendChild(descWrapper);
+    // const descElement = document.getElementById(`descriptionX${plotX}Y${plotY}`);
+    plotWrapper.onmouseover = function() {
+        const descElement = document.getElementById(`descriptionX${plotX}Y${plotY}`);
+        if(descElement) {
+            descElement.classList.add("point-hovered");
+        }
+    }
+    plotWrapper.onmouseout = function() {
+        const descElement = document.getElementById(`descriptionX${plotX}Y${plotY}`);
+        if(descElement) {
+            descElement.classList.remove("point-hovered");
+        }
+    }
 
     const imgPreviewSection = document.getElementById("image-preview-section");
     imgPreviewSection.appendChild(plotWrapper);
+    input.focus();
 }
 
 function saveDescriptionHandlerWrapper(plot) {
@@ -141,6 +154,7 @@ function saveDescriptionHandlerWrapper(plot) {
             const inProgressPlot = document.getElementById("image-plot-wrapper-in-progress");
             const savedDescription = document.createElement("div");
             savedDescription.setAttribute("class", "description-saved");
+            savedDescription.setAttribute("id", `pointX${plot.x}Y${plot.y}`);
             savedDescription.innerText = input.value;
             inProgressPlot.appendChild(savedDescription);
             // changes in-progress plot to permanent plot
@@ -172,6 +186,20 @@ function populateDescriptionList(plot) {
     }
     const descTableBody = document.getElementById("descriptions-table-body");
     const newRow = document.createElement("tr");
+    newRow.setAttribute("id", `descriptionX${plot.x}Y${plot.y}`);
+    // const pointElement = document.getElementById(`pointX${plot.x}Y${plot.y}`);
+    newRow.onmouseover = function() {
+        const pointElement = document.getElementById(`pointX${plot.x}Y${plot.y}`);
+        if(pointElement) {
+            pointElement.classList.add("desc-hovered");
+        }
+    }
+    newRow.onmouseout = function() {
+        const pointElement = document.getElementById(`pointX${plot.x}Y${plot.y}`);
+        if(pointElement) {
+            pointElement.classList.remove("desc-hovered");
+        }
+    }
     newRow.innerHTML = "<td>" + plot.x + "</td><td>" + plot.y + "</td><td>" + plot.description + "</td>";
     descTableBody.appendChild(newRow);
 }
