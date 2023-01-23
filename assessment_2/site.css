@@ -1,0 +1,65 @@
+body {
+    margin: 5px;
+}
+.wrapper {
+    font-family: sans-serif;
+}
+.wrapper #ticker-symbol-field {
+    width: 175px;
+}
+.wrapper #canvas-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 10px;
+    border: 1px dashed gray;
+    margin-top: 20px;
+}
+.wrapper #canvas-wrapper.no-border {
+    display: none;
+}
+.wrapper #canvas-wrapper .point-statistics-wrapper {
+    position: absolute;
+    cursor: pointer;
+    padding: 3px;
+}
+.wrapper #canvas-wrapper .point-statistics-wrapper:hover .point-statistics {
+    display: block;
+}
+.wrapper #canvas-wrapper .point-statistics {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: white;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    border-top-left-radius: unset;
+}
+.wrapper #canvas-wrapper .point-statistics .stats-header {
+    font-size: small;
+    /* font-style: italic; */
+    text-decoration: underline;
+    margin-bottom: 3px;
+}
+.wrapper #canvas-wrapper .point-statistics table {
+    border-collapse: collapse;
+}
+.wrapper #canvas-wrapper .point-statistics td {
+    font-size: smaller;
+}
+.wrapper #canvas-wrapper .point-statistics td .closed-high {
+    color: lightgreen;
+}
+.wrapper #canvas-wrapper .point-statistics td .closed-low {
+    color: red;
+}
+.wrapper #canvas-wrapper .point-statistics td:last-child {
+    min-width: 108px;
+}
+.wrapper #canvas-wrapper .point-statistics td.point-stat-value {
+    font-weight: bold;
+}
+.wrapper #canvas-wrapper .point-statistics td.point-stat-time {
+    font-weight: 100;
+}

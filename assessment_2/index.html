@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assessment 2: Pursuit</title>
+    <link rel="stylesheet" href="site.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <h2>Stock Tracker</h2>
+        <div id="ticker-symbol-form">
+                <label for="ticker-symbol-field">Ticker Symbol</label>
+                <input
+                    type="text"
+                    maxlength="6"
+                    name="ticker-symbol-field"
+                    id="ticker-symbol-field"
+                    placeholder="(for example: IBM, GOOGL)"
+                />
+                <button onclick="fetchStockData()" id="stock-fetch-button">Fetch</button>
+        </div>
+        <div id="canvas-wrapper" class="no-border">
+            <canvas id="stock-tracker-canvas" width="760px" height="440px"></canvas>
+        </div>
+    </div>
+	<script src="stock-tracker.js"></script>
+  </body>
+</html>
